@@ -74,7 +74,7 @@ function calculateNextSessionValue() {
   // if result is negative, add 7 days
   if (daysUntilSaturday < 0) daysUntilSaturday = daysUntilSaturday + 7;
 
-  // set next-session-value
+  // return result
   return {
     epoch: nextSession,
     isSaturday,
