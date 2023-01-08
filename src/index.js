@@ -9,7 +9,7 @@ const server = createServer((request, response) => {
       Result(response, 200, { status: "OK" });
       break;
     case "/session/next":
-      Result(response, 200, calculateNextSessionValue());
+      Result(response, 200, nextSession());
       break;
     default:
       Result(response, 404, { error: 404, message: "Not Found" });
@@ -42,18 +42,14 @@ function uuid() {
   });
 }
 
-function calculateNextSessionValue() {
-  const dayAsNumber = 6; // 6 = Saturday, 7 = Sunday, 1 = Monday, etc.
-  const hourInUTC = 18; // 18 = 18:XX UTC, 19 = 19:XX UTC, etc.
-  const minuteInUTC = 0; // 0 = XX:00 UTC, 1 = XX:01 UTC, etc.
-
+function nextSession(day = 6, hour = 18, minute = 0) {
   // get current epoch time
   const now = new Date().getTime();
 
-  // get epoch of 18:00 UTC
-  const nextSession = new Date().setUTCHours(hourInUTC, minuteInUTC, 0, 0);
+  // get epoch of hour and minute of next session
+  const nextSession = new Date().setUTCHours(hour, minute, 0, 0);
 
-  // get difference between now and 18:00 UTC
+  // get difference between now and next session in milliseconds
   const difference = nextSession - now;
 
   // calculate hours, minutes and seconds
@@ -62,15 +58,16 @@ function calculateNextSessionValue() {
   );
   const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  const milliseconds = Math.floor(difference % 1000);
 
   // is it Saturday?
-  const isSaturday = new Date().getDay() === dayAsNumber;
+  const isSaturday = new Date().getDay() === day;
 
   // if it is Saturday, check if it is after 18:00 UTC
   const isAfterSession = isSaturday && difference < 0;
 
   // if it is not Saturday, how many days until Saturday?
-  let daysUntilSaturday = isSaturday ? 0 : dayAsNumber - new Date().getDay();
+  let daysUntilSaturday = isSaturday ? 0 : day - new Date().getDay();
 
   // if result is negative, add 7 days
   if (daysUntilSaturday < 0) daysUntilSaturday = daysUntilSaturday + 7;
@@ -83,5 +80,6 @@ function calculateNextSessionValue() {
     hours: isAfterSession ? hours + 24 : hours,
     minutes: isAfterSession ? minutes + 60 : minutes,
     seconds: isAfterSession ? seconds + 60 : seconds,
+    milliseconds: isAfterSession ? milliseconds + 1000 : milliseconds,
   };
 }
