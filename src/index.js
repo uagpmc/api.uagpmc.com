@@ -22,6 +22,7 @@ server.listen(3000, () => {
 });
 
 function Result(response, code, data) {
+  response.setHeader("Access-Control-Allow-Origin", "*");
   response.writeHead(code, { "Content-Type": "application/json" });
   response.end(
     JSON.stringify({
