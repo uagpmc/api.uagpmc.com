@@ -11,14 +11,14 @@ app.use(compression());
 app.use(morgan());
 
 app.get("/", (request, response) => {
-  response.send({
+  response.json({
     uuid: uuid(),
     message: "Hello World",
   });
 });
 
 app.get("/healthcheck", (request, response) => {
-  response.send({
+  response.json({
     uuid: uuid(),
     status: "OK",
     responseTime: express.responseTime(),
@@ -26,7 +26,7 @@ app.get("/healthcheck", (request, response) => {
 });
 
 app.get("/session/next", (request, response) => {
-  response.send({
+  response.json({
     uuid: uuid(),
     ...nextSession(),
   });
