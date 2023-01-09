@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
+import { existsSync } from "fs";
 
 const app = express();
 const port = 3000;
@@ -30,6 +31,29 @@ app.get("/session/next", (request, response) => {
     uuid: uuid(),
     ...nextSession(),
   });
+});
+
+app.get("/loadouts/:category/:id", async (request, response) => {
+  // get loadout path
+  const loadout = `./data/loadouts/${request.params.category}/${request.params.id}.js`;
+
+  // does the loadout exist?
+  if (existsSync(`./src/${loadout}`)) {
+    // if so, return loadout by evaluating the file
+    const loadoutData = await import(loadout);
+
+    response.json({
+      uuid: uuid(),
+      ...request.params,
+      ...loadoutData.default,
+    });
+  } else {
+    // if not, return 404
+    response.status(404).json({
+      uuid: uuid(),
+      message: "Loadout not found",
+    });
+  }
 });
 
 app.listen(port, () => {
