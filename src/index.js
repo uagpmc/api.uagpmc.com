@@ -1,12 +1,14 @@
 import express from "express";
 import cors from "cors";
 import compression from "compression";
+import morgan from "morgan";
 
 const app = express();
 const port = 3000;
 
 app.use(cors());
 app.use(compression());
+app.use(morgan());
 
 app.get("/", (request, response) => {
   response.send({
