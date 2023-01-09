@@ -1,36 +1,36 @@
-import { createServer } from "http";
+import express from "express";
+import cors from "cors";
 
-const server = createServer((request, response) => {
-  switch (request.url) {
-    case "/":
-      Result(response, 200, { message: "Hello World" });
-      break;
-    case "/healthcheck":
-      Result(response, 200, { status: "OK" });
-      break;
-    case "/session/next":
-      Result(response, 200, nextSession());
-      break;
-    default:
-      Result(response, 404, { error: 404, message: "Not Found" });
-      break;
-  }
+const app = express();
+const port = 3000;
+
+app.use(cors());
+
+app.get("/", (request, response) => {
+  response.send({
+    uuid: uuid(),
+    message: "Hello World",
+  });
 });
 
-server.listen(3000, () => {
-  console.log("Server listening on port 3000");
+app.get("/healthcheck", (request, response) => {
+  response.send({
+    uuid: uuid(),
+    status: "OK",
+    responseTime: express.responseTime(),
+  });
 });
 
-function Result(response, code, data) {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.writeHead(code, { "Content-Type": "application/json" });
-  response.end(
-    JSON.stringify({
-      _id: uuid(),
-      ...data,
-    })
-  );
-}
+app.get("/session/next", (request, response) => {
+  response.send({
+    uuid: uuid(),
+    ...nextSession(),
+  });
+});
+
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
 
 function uuid() {
   // format: version-epoch-random
