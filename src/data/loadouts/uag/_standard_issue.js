@@ -8,6 +8,9 @@ const standardIssue = {
   VEST_LIGHT: "UAG_Plate_Carrier_Light",
   VEST_MEDIUM: "UAG_Plate_Carrier_Medium",
   VEST_HEAVY: "UAG_Plate_Carrier_Heavy",
+  BACKPACK_LIGHT: "B_AssaultPack_blk",
+  BACKPACK_MEDIUM: "Rainman_Kitbag_Splinter_Urban",
+  BACKPACK_HEAVY: "B_Bergen_mcamo_F",
   get MEDICAL_SUPPLIES() {
     return this.MEDICAL_SUPPLIES_MINIMUM;
   },
@@ -20,7 +23,7 @@ const standardIssue = {
     ["ACE_pissIV", 1],
     ["ACE_Capri_Sun", 1],
   ],
-  MEDICAL_SUPPLIES_FULL: [
+  MEDICAL_SUPPLIES_CORPSMAN: [
     ["ACE_elasticBandage", 25],
     ["ACE_quikclot", 25],
     ["ACE_morphine", 4],
@@ -29,7 +32,7 @@ const standardIssue = {
     ["ACE_pissIV", 2],
     ["ACE_Capri_Sun", 2],
   ],
-  MEDICAL_SUPPLIES_CORPSMAN: [
+  MEDICAL_SUPPLIES_MEDIC: [
     ["ACE_elasticBandage", 50],
     ["ACE_quikclot", 50],
     ["ACE_morphine", 10],
@@ -71,11 +74,14 @@ export const VEST = standardIssue.VEST;
 export const VEST_LIGHT = standardIssue.VEST_LIGHT;
 export const VEST_MEDIUM = standardIssue.VEST_MEDIUM;
 export const VEST_HEAVY = standardIssue.VEST_HEAVY;
+export const BACKPACK_LIGHT = standardIssue.BACKPACK_LIGHT;
+export const BACKPACK_MEDIUM = standardIssue.BACKPACK_MEDIUM;
+export const BACKPACK_HEAVY = standardIssue.BACKPACK_HEAVY;
 export const MEDICAL_SUPPLIES = standardIssue.MEDICAL_SUPPLIES;
 export const MEDICAL_SUPPLIES_MINIMUM = standardIssue.MEDICAL_SUPPLIES_MINIMUM;
-export const MEDICAL_SUPPLIES_FULL = standardIssue.MEDICAL_SUPPLIES_FULL;
 export const MEDICAL_SUPPLIES_CORPSMAN =
   standardIssue.MEDICAL_SUPPLIES_CORPSMAN;
+export const MEDICAL_SUPPLIES_MEDIC = standardIssue.MEDICAL_SUPPLIES_MEDIC;
 export const MISCELLANEOUS_ITEMS = standardIssue.MISCELLANEOUS_ITEMS;
 export const BINOCULARS = standardIssue.BINOCULARS;
 export const INSIGNIA = standardIssue.INSIGNIA;

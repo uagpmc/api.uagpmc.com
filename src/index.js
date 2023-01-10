@@ -286,6 +286,9 @@ function loadoutJsonToSqf(loadout) {
       sqf += `player addSecondaryWeaponItem "${item}";\n`;
     });
 
+  // execute any code
+  if (loadout.code) sqf += loadout.code;
+
   return sqf;
 }
 
