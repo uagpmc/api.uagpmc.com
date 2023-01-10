@@ -55,7 +55,10 @@ const standardIssue = {
   HANDGUN_AMMO: "30Rnd_9x21_Mag",
   LMG: "LMG_03_F",
   LMG_AMMO: "200Rnd_556x45_Box_Tracer_Red_F",
-  LMG_ITEMS: ["optic_mrco", "acc_flashlight", "ace_muzzle_mzls_b"],
+  LMG_ITEMS: ["optic_mrco", "ace_acc_pointer_green", "ace_muzzle_mzls_b"],
+  MMG: "MMG_02_black_F",
+  MMG_AMMO: "130Rnd_338_Mag",
+  MMG_ITEMS: ["optic_mrco", "ace_acc_pointer_green", "ace_muzzle_mzls_338"],
   FRAG_GRENADE: "HandGrenade",
   SMOKE_GRENADE: "SmokeShell",
   SMOKE_GRENADE_BLUE: "SmokeShellBlue",
@@ -84,6 +87,9 @@ export const HANDGUN_AMMO = standardIssue.HANDGUN_AMMO;
 export const LMG = standardIssue.LMG;
 export const LMG_AMMO = standardIssue.LMG_AMMO;
 export const LMG_ITEMS = standardIssue.LMG_ITEMS;
+export const MMG = standardIssue.MMG;
+export const MMG_AMMO = standardIssue.MMG_AMMO;
+export const MMG_ITEMS = standardIssue.MMG_ITEMS;
 export const FRAG_GRENADE = standardIssue.FRAG_GRENADE;
 export const SMOKE_GRENADE = standardIssue.SMOKE_GRENADE;
 export const SMOKE_GRENADE_BLUE = standardIssue.SMOKE_GRENADE_BLUE;
