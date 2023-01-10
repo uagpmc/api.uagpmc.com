@@ -182,7 +182,7 @@ async function getLoadout(category, id) {
 }
 
 function loadoutJsonToSqf(loadout) {
-  let sqf = `"loadout generated from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}";\n`;
+  let sqf = `hint "loadout generated from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}";\n`;
 
   // strip unit of everything
   sqf += `player setUnitLoadout (configFile >> "EmptyLoadout");\n`;
