@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import compression from "compression";
 import morgan from "morgan";
-import { existsSync } from "fs";
+import { existsSync, readdirSync } from "fs";
 
 const app = express();
 const port = 3000;
@@ -31,6 +31,30 @@ app.get("/session/next", (request, response) => {
     uuid: uuid(),
     ...nextSession(),
   });
+});
+
+app.get("/loadouts", (request, response) => {
+  response.json({
+    uuid: uuid(),
+    categories: getLoadoutCategories(),
+  });
+});
+
+app.get("/loadouts/:category", (request, response) => {
+  const loadouts = getLoadouts(request.params.category);
+
+  if (loadouts === 404) {
+    response.status(404).json({
+      uuid: uuid(),
+      message: "Category not found",
+    });
+  } else {
+    response.json({
+      uuid: uuid(),
+      category: request.params.category,
+      loadouts: loadouts,
+    });
+  }
 });
 
 app.get("/loadouts/:category/:id.sqf", async (request, response) => {
@@ -247,4 +271,38 @@ function loadoutJsonToSqf(loadout) {
     });
 
   return sqf;
+}
+
+function getLoadoutCategories() {
+  // get a list of all loadout categories
+  const categories = readdirSync("./src/data/loadouts", {
+    withFileTypes: true,
+  });
+
+  // filter out non-directories
+  const loadoutCategories = categories
+    .filter((thing) => thing.isDirectory())
+    .map((category) => category.name);
+
+  return loadoutCategories;
+}
+
+function getLoadouts(category) {
+  // does the category exist?
+  if (!getLoadoutCategories().includes(category)) return 404;
+
+  // get a list of all loadouts in a category
+  const categories = readdirSync(`./src/data/loadouts/${category}`, {
+    withFileTypes: true,
+  });
+
+  // filter out directories
+  const loadouts = categories
+    .filter((thing) => !thing.isDirectory())
+    .map((loadout) => loadout.name.replace(".js", ""));
+
+  // filter out anything that starts with _
+  const returnLoadouts = loadouts.filter((loadout) => !loadout.startsWith("_"));
+
+  return returnLoadouts;
 }
