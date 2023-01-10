@@ -34,24 +34,17 @@ app.get("/session/next", (request, response) => {
 });
 
 app.get("/loadouts/:category/:id", async (request, response) => {
-  // get loadout path
-  const loadout = `./data/loadouts/${request.params.category}/${request.params.id}.js`;
+  const loadout = await getLoadout(request.params.category, request.params.id);
 
-  // does the loadout exist?
-  if (existsSync(`./src/${loadout}`)) {
-    // if so, return loadout by evaluating the file
-    const loadoutData = await import(loadout);
-
-    response.json({
-      uuid: uuid(),
-      ...request.params,
-      ...loadoutData.default,
-    });
-  } else {
-    // if not, return 404
+  if (loadout === 404) {
     response.status(404).json({
       uuid: uuid(),
       message: "Loadout not found",
+    });
+  } else {
+    response.json({
+      uuid: uuid(),
+      ...loadout,
     });
   }
 });
@@ -110,4 +103,20 @@ function nextSession(day = 6, hour = 18, minute = 0) {
     seconds: isAfterSession ? seconds + 60 : seconds,
     milliseconds: isAfterSession ? milliseconds + 1000 : milliseconds,
   };
+}
+
+async function getLoadout(category, id) {
+  // get loadout path
+  const loadout = `./data/loadouts/${category}/${id}.js`;
+
+  // does the loadout exist?
+  if (existsSync(`./src/${loadout}`)) {
+    // if so, return loadout by evaluating the file
+    const loadoutData = await import(loadout);
+
+    return loadoutData.default;
+  } else {
+    // if not, return 404
+    return 404;
+  }
 }
