@@ -68,9 +68,13 @@ const standardIssue = {
   SNIPER: "srifle_LRR_F",
   SNIPER_AMMO: "ACE_7Rnd_408_305gr_Mag",
   SNIPER_ITEMS: ["optic_lrps"],
+  SMG: "SMG_03C_TR_black",
+  SMG_AMMO: "50Rnd_570x28_SMG_03",
+  SMG_ITEMS: ["optic_aco_smg", "acc_flashlight"],
   FRAG_GRENADE: "HandGrenade",
   SMOKE_GRENADE: "SmokeShell",
   SMOKE_GRENADE_BLUE: "SmokeShellBlue",
+  FLASH_GRENADE: "ACE_CTS9",
 };
 
 export const HEADGEAR = standardIssue.HEADGEAR;
@@ -108,8 +112,12 @@ export const DMR_ITEMS = standardIssue.DMR_ITEMS;
 export const SNIPER = standardIssue.SNIPER;
 export const SNIPER_AMMO = standardIssue.SNIPER_AMMO;
 export const SNIPER_ITEMS = standardIssue.SNIPER_ITEMS;
+export const SMG = standardIssue.SMG;
+export const SMG_AMMO = standardIssue.SMG_AMMO;
+export const SMG_ITEMS = standardIssue.SMG_ITEMS;
 export const FRAG_GRENADE = standardIssue.FRAG_GRENADE;
 export const SMOKE_GRENADE = standardIssue.SMOKE_GRENADE;
 export const SMOKE_GRENADE_BLUE = standardIssue.SMOKE_GRENADE_BLUE;
+export const FLASH_GRENADE = standardIssue.FLASH_GRENADE;
 
 export default standardIssue;
