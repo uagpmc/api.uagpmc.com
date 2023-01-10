@@ -33,11 +33,27 @@ app.get("/session/next", (request, response) => {
   });
 });
 
+app.get("/loadouts.txt", (request, response) => {
+  const categories = getLoadoutCategories();
+
+  response.send(categories.join(","));
+});
+
 app.get("/loadouts", (request, response) => {
   response.json({
     uuid: uuid(),
     categories: getLoadoutCategories(),
   });
+});
+
+app.get("/loadouts/:category.txt", (request, response) => {
+  const loadouts = getLoadouts(request.params.category);
+
+  if (loadouts === 404) {
+    response.status(404).send("");
+  } else {
+    response.send(loadouts.join(","));
+  }
 });
 
 app.get("/loadouts/:category", (request, response) => {
