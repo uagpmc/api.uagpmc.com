@@ -33,6 +33,22 @@ app.get("/session/next", (request, response) => {
   });
 });
 
+app.get("/loadouts/:category/:id.sqf", async (request, response) => {
+  const loadout = await getLoadout(request.params.category, request.params.id);
+
+  if (loadout === 404) {
+    response.status(404).json({
+      uuid: uuid(),
+      message: "Loadout not found",
+    });
+  } else {
+    // convert loadout to SQF syntax
+    const loadoutSqf = loadoutJsonToSqf(loadout);
+
+    response.send(loadoutSqf);
+  }
+});
+
 app.get("/loadouts/:category/:id", async (request, response) => {
   const loadout = await getLoadout(request.params.category, request.params.id);
 
@@ -114,9 +130,121 @@ async function getLoadout(category, id) {
     // if so, return loadout by evaluating the file
     const loadoutData = await import(loadout);
 
-    return loadoutData.default;
+    return {
+      ...loadoutData.default,
+      category,
+      id,
+    };
   } else {
     // if not, return 404
     return 404;
   }
+}
+
+function loadoutJsonToSqf(loadout) {
+  let sqf = `// loadout generated from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}\n`;
+
+  // strip unit of everything
+  sqf += `player setUnitLoadout (configFile >> "EmptyLoadout");\n`;
+
+  // add uniform
+  if (loadout.uniform) sqf += `player forceAddUniform "${loadout.uniform}";\n`;
+  // add vest
+  if (loadout.vest) sqf += `player addVest "${loadout.vest}";\n`;
+  // add backpack
+  if (loadout.backpack) sqf += `player addBackpack "${loadout.backpack}";\n`;
+  // add headgear
+  if (loadout.headgear) sqf += `player addHeadgear "${loadout.headgear}";\n`;
+  // add facewear
+  if (loadout.facewear) sqf += `player addGoggles "${loadout.facewear}";\n`;
+  // add nvgs
+  if (loadout.nvgs) sqf += `player linkItem "${loadout.nvgoggles}";\n`;
+  // add binoculars
+  if (loadout.binoculars) sqf += `player addWeapon "${loadout.binoculars}";\n`;
+  // add map
+  if (loadout.map) sqf += `player linkItem "${loadout.map}";\n`;
+  // add gps
+  if (loadout.gps) sqf += `player linkItem "${loadout.gps}";\n`;
+  // add compass
+  if (loadout.compass) sqf += `player linkItem "${loadout.compass}";\n`;
+  // add watch
+  if (loadout.watch) sqf += `player linkItem "${loadout.watch}";\n`;
+  // add radio
+  if (loadout.radio) sqf += `player linkItem "${loadout.radio}";\n`;
+  // add insignia
+  if (loadout.insignia)
+    sqf += `[player,"${loadout.insignia}"] call BIS_fnc_setUnitInsignia;\n`;
+
+  // add items
+  if (loadout.items)
+    loadout.items.forEach((item) => {
+      const name = item[0];
+      const count = item[1];
+
+      for (let i = 0; i < count; i++) {
+        sqf += `player addItem "${name}";\n`;
+      }
+    });
+
+  // add rifle mags
+  if (loadout.rifleAmmo)
+    loadout.rifleAmmo.forEach((mag) => {
+      const name = mag[0];
+      const count = mag[1];
+
+      for (let i = 0; i < count; i++) {
+        sqf += `player addMagazine "${name}";\n`;
+      }
+    });
+
+  // add rifle
+  if (loadout.rifle) sqf += `player addWeapon "${loadout.rifle}";\n`;
+
+  // add rifle items
+  if (loadout.rifleItems)
+    loadout.rifleItems.forEach((item) => {
+      sqf += `player addPrimaryWeaponItem "${item}";\n`;
+    });
+
+  // add handgun mags
+  if (loadout.handgunAmmo)
+    loadout.handgunAmmo.forEach((mag) => {
+      const name = mag[0];
+      const count = mag[1];
+
+      for (let i = 0; i < count; i++) {
+        sqf += `player addMagazine "${name}";\n`;
+      }
+    });
+
+  // add handgun
+  if (loadout.handgun) sqf += `player addWeapon "${loadout.handgun}";\n`;
+
+  // add handgun items
+  if (loadout.handgunItems)
+    loadout.handgunItems.forEach((item) => {
+      sqf += `player addHandgunItem "${item}";\n`;
+    });
+
+  // add launcher mags
+  if (loadout.launcherAmmo)
+    loadout.launcherAmmo.forEach((mag) => {
+      const name = mag[0];
+      const count = mag[1];
+
+      for (let i = 0; i < count; i++) {
+        sqf += `player addMagazine "${name}";\n`;
+      }
+    });
+
+  // add launcher
+  if (loadout.launcher) sqf += `player addWeapon "${loadout.launcher}";\n`;
+
+  // add launcher items
+  if (loadout.launcherItems)
+    loadout.launcherItems.forEach((item) => {
+      sqf += `player addSecondaryWeaponItem "${item}";\n`;
+    });
+
+  return sqf;
 }

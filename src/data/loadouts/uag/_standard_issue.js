@@ -48,6 +48,14 @@ const standardIssue = {
   ],
   BINOCULARS: "ACE_Vector",
   INSIGNIA: "ACE_insignia_banana",
+  RIFLE: "UAG_MSBS65v2",
+  RIFLE_AMMO: "30Rnd_65x39_caseless_msbs_mag",
+  RIFLE_ITEMS: ["optic_ico_01_black_f", "acc_flashlight", "ace_muzzle_mzls_h"],
+  HANDGUN: "CUP_hgun_Glock17_blk",
+  HANDGUN_AMMO: "CUP_17Rnd_9x19_glock17",
+  FRAG_GRENADE: "HandGrenade",
+  SMOKE_GRENADE: "SmokeShell",
+  SMOKE_GRENADE_BLUE: "SmokeShellBlue",
 };
 
 export const HEADGEAR = standardIssue.HEADGEAR;
@@ -65,5 +73,13 @@ export const MEDICAL_SUPPLIES_CORPSMAN =
 export const MISCELLANEOUS_ITEMS = standardIssue.MISCELLANEOUS_ITEMS;
 export const BINOCULARS = standardIssue.BINOCULARS;
 export const INSIGNIA = standardIssue.INSIGNIA;
+export const RIFLE = standardIssue.RIFLE;
+export const RIFLE_AMMO = standardIssue.RIFLE_AMMO;
+export const RIFLE_ITEMS = standardIssue.RIFLE_ITEMS;
+export const HANDGUN = standardIssue.HANDGUN;
+export const HANDGUN_AMMO = standardIssue.HANDGUN_AMMO;
+export const FRAG_GRENADE = standardIssue.FRAG_GRENADE;
+export const SMOKE_GRENADE = standardIssue.SMOKE_GRENADE;
+export const SMOKE_GRENADE_BLUE = standardIssue.SMOKE_GRENADE_BLUE;
 
 export default standardIssue;
