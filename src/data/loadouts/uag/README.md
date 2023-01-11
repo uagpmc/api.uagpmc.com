@@ -26,4 +26,17 @@ The following in-game roles should be covered by the standard loadouts:
 - Explosive Specialist
 - Sniper
 - Raider
+- Pointman
 - Bitchboy
+
+## Mods
+
+The following mods are allowed to be used in the standard loadouts:
+
+- All vanilla & non-creator DLC items
+- ACE3
+- UAG Units
+- RM Splinter Gear
+- Ctab Devastator Edition
+- ADV ACE-CPR (Pike Edition)
+- CUP Weapons
