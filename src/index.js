@@ -226,6 +226,17 @@ function loadoutJsonToSqf(loadout) {
       }
     });
 
+  // add medical supplies
+  if (loadout.medicalSupplies)
+    loadout.medicalSupplies.forEach((item) => {
+      const name = item[0];
+      const count = item[1];
+
+      for (let i = 0; i < count; i++) {
+        sqf += `player addItem "${name}";\n`;
+      }
+    });
+
   // add rifle mags
   if (loadout.rifleAmmo)
     loadout.rifleAmmo.forEach((mag) => {
