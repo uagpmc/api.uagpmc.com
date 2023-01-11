@@ -311,17 +311,20 @@ function getLoadouts(category) {
   if (!getLoadoutCategories().includes(category)) return 404;
 
   // get a list of all loadouts in a category
-  const categories = readdirSync(`./src/data/loadouts/${category}`, {
+  let categories = readdirSync(`./src/data/loadouts/${category}`, {
     withFileTypes: true,
   });
 
   // filter out directories
-  const loadouts = categories
+  categories = categories
     .filter((thing) => !thing.isDirectory())
     .map((loadout) => loadout.name.replace(".js", ""));
 
   // filter out anything that starts with _
-  const returnLoadouts = loadouts.filter((loadout) => !loadout.startsWith("_"));
+  categories = categories.filter((loadout) => !loadout.startsWith("_"));
 
-  return returnLoadouts;
+  // filter out anything that ends with .md
+  categories = categories.filter((loadout) => !loadout.endsWith(".md"));
+
+  return categories;
 }
