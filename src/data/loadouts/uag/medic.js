@@ -6,5 +6,5 @@ export default {
   name: "Medic",
   description: "Standard medic loadout.",
   backpack: BACKPACK_MEDIUM,
-  medicalSupplies: MEDICAL_SUPPLIES_MEDIC,
+  medicalSupplies: [...MEDICAL_SUPPLIES_MEDIC],
 };

@@ -18,7 +18,7 @@ export default {
   vest: VEST,
   backpack: null,
   items: [...MISCELLANEOUS_ITEMS],
-  medicalSupplies: MEDICAL_SUPPLIES,
+  medicalSupplies: [...MEDICAL_SUPPLIES],
   rifle: null,
   rifleAmmo: [],
   handgun: null,

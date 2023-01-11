@@ -5,5 +5,5 @@ export default {
   ...rifleman,
   name: "Corpsman",
   description: "Standard corpsman loadout.",
-  medicalSupplies: MEDICAL_SUPPLIES_CORPSMAN,
+  medicalSupplies: [...MEDICAL_SUPPLIES_CORPSMAN],
 };
