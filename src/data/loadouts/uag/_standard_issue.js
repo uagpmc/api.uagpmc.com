@@ -54,7 +54,7 @@ const standardIssue = {
   ],
   BINOCULARS: "ACE_Vector",
   INSIGNIA: "ACE_insignia_banana",
-  RIFLE: "UAG_MSBS65v2",
+  RIFLE: "arifle_MSBS65_black_f",
   RIFLE_AMMO: "30Rnd_65x39_caseless_msbs_mag",
   RIFLE_ITEMS: ["optic_ico_01_black_f", "acc_flashlight", "ace_muzzle_mzls_h"],
   HANDGUN: "hgun_P07_blk_F",
@@ -65,7 +65,7 @@ const standardIssue = {
   MMG: "MMG_02_black_F",
   MMG_AMMO: "130Rnd_338_Mag",
   MMG_ITEMS: ["optic_mrco", "ace_acc_pointer_green", "ace_muzzle_mzls_338"],
-  DMR: "UAG_SIG556",
+  DMR: "srifle_DMR_03_F",
   DMR_AMMO: "ACE_20Rnd_762x51_Mk319_Mod_0_Mag",
   DMR_ITEMS: [
     "optic_dms",
