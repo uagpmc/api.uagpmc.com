@@ -93,6 +93,7 @@ const standardIssue = {
   AA_LAUNCHER: "launch_I_Titan_F",
   AA_LAUNCHER_AMMO: "Titan_AA",
   AA_LAUNCHER_ITEMS: ["ace_acc_pointer_green"],
+  AT_LAUNCHER_LIGHT: "CUP_launch_M136",
   FRAG_GRENADE: "HandGrenade",
   SMOKE_GRENADE: "SmokeShell",
   SMOKE_GRENADE_BLUE: "SmokeShellBlue",
@@ -149,6 +150,7 @@ export const AT_LAUNCHER_ITEMS = standardIssue.AT_LAUNCHER_ITEMS;
 export const AA_LAUNCHER = standardIssue.AA_LAUNCHER;
 export const AA_LAUNCHER_AMMO = standardIssue.AA_LAUNCHER_AMMO;
 export const AA_LAUNCHER_ITEMS = standardIssue.AA_LAUNCHER_ITEMS;
+export const AT_LAUNCHER_LIGHT = standardIssue.AT_LAUNCHER_LIGHT;
 export const FRAG_GRENADE = standardIssue.FRAG_GRENADE;
 export const SMOKE_GRENADE = standardIssue.SMOKE_GRENADE;
 export const SMOKE_GRENADE_BLUE = standardIssue.SMOKE_GRENADE_BLUE;
