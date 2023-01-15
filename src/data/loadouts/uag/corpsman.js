@@ -1,9 +1,5 @@
 import rifleman from "./rifleman.js";
-import {
-  HEADGEAR_LIGHT,
-  VEST_LIGHT,
-  MEDICAL_SUPPLIES_CORPSMAN,
-} from "./_standard_issue.js";
+import { VEST_LIGHT, MEDICAL_SUPPLIES_CORPSMAN } from "./_standard_issue.js";
 
 export default {
   ...rifleman,
