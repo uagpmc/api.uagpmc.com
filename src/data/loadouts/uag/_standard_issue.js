@@ -87,6 +87,12 @@ const standardIssue = {
   SHOTGUN: "CUP_sgun_AA12",
   SHOTGUN_AMMO: "CUP_20Rnd_B_AA12_Buck_0",
   SHOTGUN_ITEMS: ["acc_flashlight"],
+  AT_LAUNCHER: "launch_MRAWS_green_F",
+  AT_LAUNCHER_AMMO: "MRAWS_HEAT_F",
+  AT_LAUNCHER_ITEMS: ["ace_acc_pointer_green"],
+  AA_LAUNCHER: "launch_I_Titan_F",
+  AA_LAUNCHER_AMMO: "Titan_AA",
+  AA_LAUNCHER_ITEMS: ["ace_acc_pointer_green"],
   FRAG_GRENADE: "HandGrenade",
   SMOKE_GRENADE: "SmokeShell",
   SMOKE_GRENADE_BLUE: "SmokeShellBlue",
@@ -137,6 +143,12 @@ export const SMG_ITEMS = standardIssue.SMG_ITEMS;
 export const SHOTGUN = standardIssue.SHOTGUN;
 export const SHOTGUN_AMMO = standardIssue.SHOTGUN_AMMO;
 export const SHOTGUN_ITEMS = standardIssue.SHOTGUN_ITEMS;
+export const AT_LAUNCHER = standardIssue.AT_LAUNCHER;
+export const AT_LAUNCHER_AMMO = standardIssue.AT_LAUNCHER_AMMO;
+export const AT_LAUNCHER_ITEMS = standardIssue.AT_LAUNCHER_ITEMS;
+export const AA_LAUNCHER = standardIssue.AA_LAUNCHER;
+export const AA_LAUNCHER_AMMO = standardIssue.AA_LAUNCHER_AMMO;
+export const AA_LAUNCHER_ITEMS = standardIssue.AA_LAUNCHER_ITEMS;
 export const FRAG_GRENADE = standardIssue.FRAG_GRENADE;
 export const SMOKE_GRENADE = standardIssue.SMOKE_GRENADE;
 export const SMOKE_GRENADE_BLUE = standardIssue.SMOKE_GRENADE_BLUE;
