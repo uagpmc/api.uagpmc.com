@@ -1,5 +1,7 @@
 import rifleman from "./rifleman.js";
 import {
+  HEADGEAR_LIGHT,
+  VEST_LIGHT,
   SMG,
   SMG_AMMO,
   SMG_ITEMS,
@@ -11,6 +13,8 @@ export default {
   ...rifleman,
   name: "Raider",
   description: "Standard raider loadout.",
+  headgear: HEADGEAR_LIGHT,
+  vest: VEST_LIGHT,
   rifle: SMG,
   rifleAmmo: [[SMG_AMMO, 10]],
   rifleItems: SMG_ITEMS,
