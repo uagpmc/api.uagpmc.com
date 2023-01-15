@@ -1,5 +1,10 @@
 const standardIssue = {
-  HEADGEAR: "UAG_Combat_Helmet_Medium",
+  get HEADGEAR() {
+    return this.HEADGEAR_MEDIUM;
+  },
+  HEADGEAR_LIGHT: "UAG_Combat_Helmet_Light",
+  HEADGEAR_MEDIUM: "UAG_Combat_Helmet_Medium",
+  HEADGEAR_HEAVY: "UAG_Combat_Helmet_Heavy",
   FACEWEAR: "UAG_Balaclava_Goggles",
   UNIFORM: "UAG_Combat_Fatigues",
   get VEST() {
@@ -89,6 +94,9 @@ const standardIssue = {
 };
 
 export const HEADGEAR = standardIssue.HEADGEAR;
+export const HEADGEAR_LIGHT = standardIssue.HEADGEAR_LIGHT;
+export const HEADGEAR_MEDIUM = standardIssue.HEADGEAR_MEDIUM;
+export const HEADGEAR_HEAVY = standardIssue.HEADGEAR_HEAVY;
 export const FACEWEAR = standardIssue.FACEWEAR;
 export const UNIFORM = standardIssue.UNIFORM;
 export const VEST = standardIssue.VEST;
