@@ -1,5 +1,7 @@
 import rifleman from "./rifleman.js";
 import {
+  HEADGEAR_HEAVY,
+  VEST_HEAVY,
   SHOTGUN,
   SHOTGUN_AMMO,
   SHOTGUN_ITEMS,
@@ -11,6 +13,8 @@ export default {
   ...rifleman,
   name: "Pointman",
   description: "Standard pointman loadout.",
+  headgear: HEADGEAR_HEAVY,
+  vest: VEST_HEAVY,
   rifle: SHOTGUN,
   rifleAmmo: [[SHOTGUN_AMMO, 10]],
   rifleItems: SHOTGUN_ITEMS,
