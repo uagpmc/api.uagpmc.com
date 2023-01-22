@@ -331,8 +331,10 @@ function getLoadouts(category) {
     .filter((thing) => !thing.isDirectory())
     .map((loadout) => loadout.name.replace(".js", ""));
 
-  // filter out anything that starts with _
-  categories = categories.filter((loadout) => !loadout.startsWith("_"));
+  // filter out anything that starts with _ or @
+  categories = categories.filter(
+    (loadout) => !loadout.startsWith("_") && !loadout.startsWith("@")
+  );
 
   // filter out anything that ends with .md
   categories = categories.filter((loadout) => !loadout.endsWith(".md"));
