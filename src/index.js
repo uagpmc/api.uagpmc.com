@@ -182,10 +182,20 @@ async function getLoadout(category, id) {
 }
 
 function loadoutJsonToSqf(loadout) {
-  let sqf = `hint "loadout generated from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}";\n`;
+  // is the loadout a subset? (starts with @)
+  const isSubset = loadout.id.startsWith("@");
 
-  // strip unit of everything
-  sqf += `player setUnitLoadout (configFile >> "EmptyLoadout");\n`;
+  let sqf = "";
+
+  if (isSubset) {
+    sqf += `hint "overlaying subset from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}";\n`;
+  } else {
+    sqf += `hint "applying loadout from api.uagpmc.com/loadouts/${loadout.category}/${loadout.id}";\n`;
+  }
+
+  // strip unit of everything if it is not a subset
+  if (!isSubset)
+    sqf += `player setUnitLoadout (configFile >> "EmptyLoadout");\n`;
 
   // add uniform
   if (loadout.uniform) sqf += `player forceAddUniform "${loadout.uniform}";\n`;
