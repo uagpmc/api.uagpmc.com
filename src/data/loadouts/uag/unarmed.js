@@ -1,7 +1,7 @@
 import {
   UNIFORM,
   VEST_MEDIUM,
-  HEADGEAR,
+  HEADGEAR_MEDIUM,
   FACEWEAR,
   MEDICAL_SUPPLIES_MINIMUM,
   MISCELLANEOUS_ITEMS,
@@ -12,7 +12,7 @@ import {
 export default {
   name: "Unarmed",
   description: "",
-  headgear: HEADGEAR,
+  headgear: HEADGEAR_MEDIUM,
   facewear: FACEWEAR,
   uniform: UNIFORM,
   vest: VEST_MEDIUM,
