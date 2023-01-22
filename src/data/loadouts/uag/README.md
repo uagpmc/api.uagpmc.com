@@ -1,6 +1,6 @@
 # Unnamed Arma Group Loadouts
 
-This folder contains the standard loadouts for the UAG. These loadouts are used by the UAG to standardize the equipment of its members and provide them with a solid foundation to build upon.
+This folder contains the standard loadouts for UAG. These loadouts are used by the UAG to standardize the equipment of its members and provide them with a solid foundation to build upon.
 
 ## Specifications
 
