@@ -11,7 +11,6 @@ All UAG standard loadouts must follow the following rules:
   - All vanilla & non-creator DLC items
   - [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057)
   - [ACE3 Capri Sun](https://steamcommunity.com/workshop/filedetails/?id=2602978471)
-  - [ACE3 Painkillers](https://steamcommunity.com/workshop/filedetails/?id=2607850181)
   - [ACE3 Piss Bags](https://steamcommunity.com/workshop/filedetails/?id=2597693640)
   - [ACRE2](https://steamcommunity.com/workshop/filedetails/?id=751965892)
   - [ADV ACE-CPR (Pike Edition)](https://steamcommunity.com/workshop/filedetails/?id=1957746437)
