@@ -12,7 +12,6 @@ import {
 export default {
   ...unarmed,
   name: "Rifleman",
-  description: "Standard rifleman loadout.",
   rifle: RIFLE,
   rifleAmmo: [[RIFLE_AMMO, 10]],
   rifleItems: RIFLE_ITEMS,

@@ -10,7 +10,6 @@ import {
 export default {
   ...rifleman,
   name: "Sniper",
-  description: "Standard sniper loadout.",
   headgear: HEADGEAR_LIGHT,
   vest: VEST_LIGHT,
   rifle: SNIPER,

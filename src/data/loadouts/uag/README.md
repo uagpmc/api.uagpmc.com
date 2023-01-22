@@ -1,4 +1,4 @@
-# UAG Standard Loadouts
+# Unnamed Arma Group Loadouts
 
 This folder contains the standard loadouts for the UAG. These loadouts are used by the UAG to standardize the equipment of its members and provide them with a solid foundation to build upon.
 
@@ -7,8 +7,20 @@ This folder contains the standard loadouts for the UAG. These loadouts are used 
 All UAG standard loadouts must follow the following rules:
 
 - Less than 30kg in weight
+- Use the following mods:
+  - All vanilla & non-creator DLC items
+  - [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057)
+  - [ACE3 Capri Sun](https://steamcommunity.com/workshop/filedetails/?id=2602978471)
+  - [ACE3 Painkillers](https://steamcommunity.com/workshop/filedetails/?id=2607850181)
+  - [ACE3 Piss Bags](https://steamcommunity.com/workshop/filedetails/?id=2597693640)
+  - [ACRE2](https://steamcommunity.com/workshop/filedetails/?id=751965892)
+  - [ADV ACE-CPR (Pike Edition)](https://steamcommunity.com/workshop/filedetails/?id=1957746437)
+  - [Gruppe Adler Trenches](https://steamcommunity.com/workshop/filedetails/?id=1224892496)
+  - [Improved Melee System](https://steamcommunity.com/workshop/filedetails/?id=2291129343)
+  - [RM Splinter Gear](https://steamcommunity.com/workshop/filedetails/?id=878512695)
+  - [UAG Core](https://steamcommunity.com/sharedfiles/filedetails/?id=1092924095)
 
-## Roles
+## Loadouts
 
 The following in-game roles should be covered by the standard loadouts:
 
@@ -30,15 +42,3 @@ The following in-game roles should be covered by the standard loadouts:
 | Raider               | Fast moving combat element armed with many grenades.          |
 | Pointman             | Shotgunner with breaching equipment.                          |
 | Bitchboy             | Ammo bearer and weapons carrier.                              |
-
-## Mods
-
-The following mods are allowed to be used in the standard loadouts:
-
-- All vanilla & non-creator DLC items
-- ACE3
-- UAG Units
-- RM Splinter Gear
-- Ctab Devastator Edition
-- ADV ACE-CPR (Pike Edition)
-- CUP Weapons

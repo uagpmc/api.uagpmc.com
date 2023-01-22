@@ -10,7 +10,6 @@ import {
 export default {
   ...rifleman,
   name: "Anti-Tank Specialist",
-  description: "Standard anti-tank specialist loadout.",
   headgear: HEADGEAR_HEAVY,
   backpack: BACKPACK_MEDIUM,
   launcher: AT_LAUNCHER,

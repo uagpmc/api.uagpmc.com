@@ -10,7 +10,6 @@ import {
 export default {
   ...rifleman,
   name: "Autorifleman",
-  description: "Standard autorifleman loadout.",
   headgear: HEADGEAR_HEAVY,
   vest: VEST_HEAVY,
   rifle: LMG,
