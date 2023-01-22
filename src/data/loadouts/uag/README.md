@@ -16,7 +16,6 @@ All UAG standard loadouts must follow the following rules:
   - [ACRE2](https://steamcommunity.com/workshop/filedetails/?id=751965892)
   - [ADV ACE-CPR (Pike Edition)](https://steamcommunity.com/workshop/filedetails/?id=1957746437)
   - [Gruppe Adler Trenches](https://steamcommunity.com/workshop/filedetails/?id=1224892496)
-  - [Improved Melee System](https://steamcommunity.com/workshop/filedetails/?id=2291129343)
   - [RM Splinter Gear](https://steamcommunity.com/workshop/filedetails/?id=878512695)
   - [UAG Core](https://steamcommunity.com/sharedfiles/filedetails/?id=1092924095)
 
