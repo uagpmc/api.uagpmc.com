@@ -35,6 +35,7 @@ const standardIssue = {
     ["ACE_MapTools", 1],
     ["ACE_CableTie", 1],
     ["ACE_EntrenchingTool", 1],
+    ["ACE_Fortify", 1],
     ["ACE_EarPlugs", 1],
     ["ACE_IR_Strobe_Item", 1],
   ],
