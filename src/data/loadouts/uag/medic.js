@@ -1,4 +1,3 @@
-import corpsman from "./corpsman.js";
 import { BACKPACK_MEDIUM, MEDICAL_SUPPLIES_MEDIC } from "./_standard_issue.js";
 
 export default {
